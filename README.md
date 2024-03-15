@@ -29,3 +29,12 @@ simple yet effective summarization tool that can be used for students. As well a
 sources.
 - We will also likely provide a write up of our project as a whole, what it means to
 accomplish, and the final results concerning the efficacy of the model.
+
+**IMPORTANT**
+- Before running the python code, install the following dependencies:
+    pip3 install requests
+    pip3 install selenium
+    pip3 install webdriver-manager
+    pip install beautifulsoup4
+- Use the following command to install the OpenAI API: 
+    pip install --upgrade openai
