@@ -1,0 +1,23 @@
+{
+    "simple_summary": {
+        "description": "Generate a concise summary of the text using a simple prompt.",
+        "prompt": "Summarize this text: "
+    },
+    "detailed_summary": {
+      "description": "Generate a detailed summary including titles, tags, entities, and main arguments.",
+      "prompt": "TASK: TL;DR/SUMMARY of TEXT in JSON. JSON keys: 'titles' (array of strings): 2-5 appropriate titles for TEXT; 'tags' (string): tag cloud; 'entities' (array of {'name', 'description'} objects): named entities, including persons, organizations, processes, etc., their detailed description and relationships; 'short_summaries' (array of strings): one-two sentence summaries of TEXT; 'style' (string): type, sentiment and writing style of TEXT; 'arguments' (array of strings): 5-10 main arguments of TEXT; 'summary' (string): detailed summary of TEXT."
+    },
+    "short_summary": {
+      "description": "Generate a concise one-paragraph summary of the text.",
+      "prompt": "TASK: Provide a concise one-paragraph summary of TEXT."
+    },
+    "titles_and_tags": {
+      "description": "Generate possible titles and tags for the text.",
+      "prompt": "TASK: Generate 2-5 possible titles for TEXT and suggest a tag cloud based on the content."
+    },
+    "entities_overview": {
+      "description": "Identify and describe named entities within the text.",
+      "prompt": "TASK: Identify and provide a brief description of named entities (persons, organizations, processes, relationships between) within TEXT."
+    }
+  }
+  
