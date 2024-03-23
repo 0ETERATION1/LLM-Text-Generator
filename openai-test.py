@@ -1,8 +1,6 @@
 from openai import OpenAI
 client = OpenAI()
 
-print('call successful')
-
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
