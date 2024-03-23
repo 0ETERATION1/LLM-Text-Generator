@@ -35,6 +35,12 @@ accomplish, and the final results concerning the efficacy of the model.
     pip3 install requests
     pip3 install selenium
     pip3 install webdriver-manager
-    pip install beautifulsoup4
+    pip3 install beautifulsoup4
 - Use the following command to install the OpenAI API: 
-    pip install --upgrade openai
+    pip3 install --upgrade openai
+- CLI tool uses argparse to build out options and interface
+
+**TESTING**
+- Testing is assisted by pytest
+    pip3 install pytest
+    
