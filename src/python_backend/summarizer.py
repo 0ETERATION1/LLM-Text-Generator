@@ -1,9 +1,10 @@
 # src/python_backend/summarizer.py
 import os
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Load the API key from an environment variable
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def summarize_text(text, prompt_template, model="text-davinci-003", max_tokens=150):
     """
@@ -25,9 +26,7 @@ def summarize_text(text, prompt_template, model="text-davinci-003", max_tokens=1
     try:
         response = openai.Completion.create(
             engine=model,
-            # TODO: Change the prompt to better suit the summarization task
-            # OpenAI has a variety of prompt engineering adive we can look into
-            prompt=f"Summarize this text: {text}",
+            prompt=prompt,  # Use the modified prompt here
             max_tokens=max_tokens,
             temperature=0.5,
             top_p=1.0,
@@ -40,10 +39,30 @@ def summarize_text(text, prompt_template, model="text-davinci-003", max_tokens=1
         print(f"An error occurred during text summarization: {e}")
         return "An error occurred during summarization."
 
+def test_summarize_text():
+    test_text = "OpenAI's GPT-3 is a state-of-the-art language processing AI model designed to understand and generate natural language. It can answer questions, write essays, summarize texts, and even create code based on the description provided."
+    prompt_template = "Summarize this text: TEXT"
+    
+    summary = summarize_text(test_text, prompt_template, model="text-davinci-003", max_tokens=100)
+    
+    print("Original Text:", test_text)
+    print("\nGenerated Summary:", summary)
+    
+    assert summary != "", "The summary should not be empty."
+
 # Example usage
+# Corrected example usage in summarizer.py
+
 if __name__ == "__main__":
     example_text = "Your text to summarize goes here."
-    print(summarize_text(example_text))
+    prompt_template = "Summarize this text: TEXT"  # Define a prompt template
+
+    # Now call summarize_text with both required arguments
+    print(summarize_text(example_text, prompt_template))
+
+    # Running the test
+    print("\nRunning test_summarize_text...")
+    test_summarize_text()
 
 
 #TASK: TL;DR/SUMMARY of TEXT in JSON. JSON keys: "titles" (array of strings): 2-5 appropriate titles for TEXT; "tags" (string): tag cloud; 
