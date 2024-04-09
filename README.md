@@ -1,5 +1,7 @@
 # Text-Generation
 
+Roadmap: https://docs.google.com/document/d/1o4VmrCsiKOxUhp3AvqAsl9Vr1mcgKml-xOdQzQhfre8/edit
+
 **Group members**: Kevin Liao, Alex Terskin, Sean Sweeney, Faadil Shaikh, Rodrigo Sandon
 **Project 9**: Using an LLM API to summarize text.
 
