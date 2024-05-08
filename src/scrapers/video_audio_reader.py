@@ -14,7 +14,7 @@ def extract_text_from_vid(vid_path_or_url):
     # Check if the path is a URL
     if vid_path_or_url.startswith('http://') or vid_path_or_url.startswith('https://'):
         # The path is a URL, download the PDF data
-        ! youtube-dl https://www.youtube.com/watch?v=CaQUxy_UiGA --extract-audio --audio-format mp4 --output “audio_vid.%(ext)s”
+        ! youtube-dl https://www.youtube.com/watch?v=CaQUxy_UiGA --extract-audio --audio-format mp4 --output "audio_vid.%(ext)s”
         vid_path = "audio_vid.mp4"
 
     else:
